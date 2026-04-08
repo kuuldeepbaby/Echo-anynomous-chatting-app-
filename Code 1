@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#00675c",
+                        "on-error-container": "#ffb2b9",
+                        "surface-dim": "#060e20",
+                        "primary-container": "#c284ff",
+                        "primary": "#cc97ff",
+                        "tertiary-container": "#fd81a8",
+                        "secondary-fixed": "#62fae3",
+                        "on-secondary": "#005c52",
+                        "secondary": "#62fae3",
+                        "outline": "#6d758c",
+                        "on-secondary-container": "#dcfff7",
+                        "inverse-on-surface": "#4d556b",
+                        "on-primary": "#47007c",
+                        "surface-container-highest": "#192540",
+                        "on-surface-variant": "#a3aac4",
+                        "tertiary-dim": "#f0779d",
+                        "on-tertiary-container": "#59002a",
+                        "on-error": "#490013",
+                        "primary-fixed-dim": "#b971ff",
+                        "on-secondary-fixed": "#004840",
+                        "inverse-primary": "#842cd3",
+                        "primary-dim": "#9c48ea",
+                        "on-tertiary-fixed-variant": "#701039",
+                        "surface-container-lowest": "#000000",
+                        "secondary-dim": "#50ebd5",
+                        "surface-variant": "#192540",
+                        "error": "#ff6e84",
+                        "secondary-fixed-dim": "#50ebd5",
+                        "outline-variant": "#40485d",
+                        "surface-tint": "#cc97ff",
+                        "secondary-container": "#006b5f",
+                        "on-tertiary": "#6a0934",
+                        "surface-bright": "#1f2b49",
+                        "on-surface": "#dee5ff",
+                        "surface-container-low": "#091328",
+                        "primary-fixed": "#c284ff",
+                        "surface": "#060e20",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed": "#ff8eb0",
+                        "tertiary": "#ff97b5",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#f67ca3",
+                        "on-background": "#dee5ff",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container": "#0f1930",
+                        "background": "#060e20",
+                        "on-tertiary-fixed": "#380018",
+                        "error-dim": "#d73357",
+                        "surface-container-high": "#141f38",
+                        "on-primary-fixed-variant": "#430076",
+                        "on-primary-container": "#360061"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-card {
+            background: rgba(20, 31, 56, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(98, 250, 227, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0f1930]/80 backdrop-blur-xl no-border shadow-[0_1px_20px_rgba(0,0,0,0.4)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#cc97ff] active:scale-95 duration-150 cursor-pointer" data-icon="menu">menu</span>
+<h1 class="text-2xl font-black text-[#cc97ff] tracking-tighter font-['Space_Grotesk']">Messages</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#cc97ff] hover:bg-[#1f2b49] transition-colors p-2 rounded-full cursor-pointer active:scale-95 duration-150" data-icon="add_circle">add_circle</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-24 pb-32 px-6">
+<!-- Search/Filter Area (Semantic Addition for UX) -->
+<div class="mb-8">
+<div class="bg-surface-container-high rounded-xl flex items-center px-4 py-3 gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body w-full placeholder-outline-variant" placeholder="Search encrypted transmissions..." type="text"/>
+</div>
+</div>
+<!-- Chat List -->
+<div class="space-y-4">
+<!-- Chat Item: Unread -->
+<div class="bg-surface-container-high p-4 rounded-xl flex items-center gap-4 cursor-pointer hover:bg-surface-bright transition-all active:scale-[0.98]">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary-dim to-secondary-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-surface text-3xl" data-icon="fingerprint">fingerprint</span>
+</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-secondary rounded-full border-2 border-surface-container-high"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline font-bold text-on-surface truncate">Anonymous #402</h3>
+<span class="text-[10px] font-label text-secondary uppercase tracking-widest">2m ago</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant truncate font-semibold">Did you hear the echo tonight?</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="w-5 h-5 bg-secondary text-surface text-[10px] font-bold flex items-center justify-center rounded-full">2</div>
+</div>
+</div>
+<!-- Chat Item: Read -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-4 cursor-pointer hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-tr from-surface-variant to-outline-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="hub">hub</span>
+</div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline font-semibold text-on-surface-variant truncate">Anonymous #119</h3>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">1h ago</span>
+</div>
+<p class="text-sm font-body text-outline truncate">Transmission completed successfully.</p>
+</div>
+</div>
+<!-- Chat Item: Unread -->
+<div class="bg-surface-container-high p-4 rounded-xl flex items-center gap-4 cursor-pointer hover:bg-surface-bright transition-all active:scale-[0.98]">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-tertiary-dim to-primary-fixed-dim flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" data-icon="grain">grain</span>
+</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-secondary rounded-full border-2 border-surface-container-high"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline font-bold text-on-surface truncate">Anonymous #882</h3>
+<span class="text-[10px] font-label text-secondary uppercase tracking-widest">3h ago</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant truncate font-semibold">Meet me at the digital ridge.</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="w-5 h-5 bg-secondary text-surface text-[10px] font-bold flex items-center justify-center rounded-full">1</div>
+</div>
+</div>
+<!-- Chat Item: Read -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-4 cursor-pointer hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-bl from-outline to-surface-dim flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-outline-variant text-3xl" data-icon="blur_on">blur_on</span>
+</div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline font-semibold text-on-surface-variant truncate">Anonymous #004</h3>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">Yesterday</span>
+</div>
+<p class="text-sm font-body text-outline truncate">The files have been encrypted.</p>
+</div>
+</div>
+<!-- Chat Item: Read -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-4 cursor-pointer hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<div class="relative flex-shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-r from-secondary-container to-on-secondary flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl" data-icon="filter_vintage">filter_vintage</span>
+</div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline font-semibold text-on-surface-variant truncate">Anonymous #551</h3>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">Yesterday</span>
+</div>
+<p class="text-sm font-body text-outline truncate">No one knows we are here.</p>
+</div>
+</div>
+</div>
+<!-- Privacy Status Chip -->
+<div class="mt-12 flex justify-center">
+<div class="inline-flex items-center gap-2 bg-surface-container-low border border-outline-variant/20 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[10px] font-label text-outline tracking-wider uppercase">End-to-End Encrypted</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[32px] z-50 bg-[#0f1930]/90 backdrop-blur-2xl no-border shadow-[0_-4px_24px_rgba(0,0,0,0.5)] flex justify-around items-center px-8 pb-8 pt-4 w-full">
+<div class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-all active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-['Manrope'] text-xs font-semibold">Feed</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#62fae3] bg-[#1f2b49] rounded-2xl px-6 py-2 transition-all active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-['Manrope'] text-xs font-semibold">Chat</span>
+</div>
+</nav>
+<!-- Floating Action Button (Contextual for New Message) -->
+<button class="fixed bottom-28 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-dim shadow-[0_12px_40px_rgba(0,0,0,0.4)] flex items-center justify-center text-on-primary-container z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="edit">edit</span>
+</button>
+</body></html>
